@@ -7,5 +7,7 @@ import OOP.EmployeeManagementProject.model.Employee;
 
 @Repository
 public interface EmployeeRepository extends JpaRepository<Employee, Long> {
+	
+	
 
 }
