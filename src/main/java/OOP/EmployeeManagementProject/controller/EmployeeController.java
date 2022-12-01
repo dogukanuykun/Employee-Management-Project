@@ -11,9 +11,10 @@ import org.springframework.web.bind.annotation.RestController;
 import OOP.EmployeeManagementProject.model.Employee;
 import OOP.EmployeeManagementProject.repository.EmployeeRepository;
 
-@CrossOrigin(origins = "http://localhost:3000")
+
 @RestController
 @RequestMapping("/api/employees")
+@CrossOrigin(origins = "http://localhost:3000")
 public class EmployeeController {
 
 	@Autowired

@@ -21,8 +21,8 @@ public class Employee {
 	@Column(name = "last_name")
 	private String lastName;
 	
-	@Column(name = "email_id")
-	private String emailId;
+	@Column(name = "email")
+	private String email;
 	
 	@Column(name = "salary")
 	private int salary;
@@ -31,11 +31,11 @@ public class Employee {
 		
 	}
 	
-	public Employee(String firstName, String lastName, String emailId, int salary) {
+	public Employee(String firstName, String lastName, String email, int salary) {
 		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
-		this.emailId = emailId;
+		this.email = email;
 		this.salary = salary;
 	}
 	
@@ -63,11 +63,11 @@ public class Employee {
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
-	public String getEmailId() {
-		return emailId;
+	public String getEmail() {
+		return email;
 	}
-	public void setEmailId(String emailId) {
-		this.emailId = emailId;
+	public void setEmail(String email) {
+		this.email = email;
 	}
 	
 

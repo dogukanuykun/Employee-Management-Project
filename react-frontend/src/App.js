@@ -1,11 +1,11 @@
 import logo from './logo.svg';
 import './App.css';
-import ListEmployeeComponent from './components/ListEmployeeComponent';
+import ListEmployee from './components/ListEmployee';
 
 function App() {
   return (
     <div className="container">
-      <ListEmployeeComponent />
+      <ListEmployee />
     </div>
   );
 }
