@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import EmployeeService from '../services/EmployeeService';
 
 class ListEmployeeComponent extends Component {
     constructor(props){
@@ -8,6 +9,11 @@ class ListEmployeeComponent extends Component {
         }
     }
 
+    componentDidMount(){
+        EmployeeService.getEmployees().then((res) => {
+            this.setState({ employees : res.data })
+        })
+    }
     render() {
         return (
             <div>
@@ -33,9 +39,9 @@ class ListEmployeeComponent extends Component {
                             this.state.employees.map(
                                 employee => 
                                 <tr key={employee.id}>
-                                    <td>{employee.firstName}</td>
-                                    <td>{employee.lastName} </td>
-                                    <td>{employee.emailId}</td>
+                                    <td>{employee.first_name}</td>
+                                    <td>{employee.last_name} </td>
+                                    <td>{employee.email_id}</td>
                                     <td>{employee.salary}</td>
                                 </tr>
                             )
