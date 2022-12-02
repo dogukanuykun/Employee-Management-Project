@@ -6,7 +6,7 @@ export default function Footer() {
 
         <footer className='footer'>
         <span className='text-muted font-weight-bold font-italic'>Doğukan Uykun</span><br></br>
-        <span className='text-muted'><a href="https://www.ankara.edu.tr/">Ankara University</a></span>
+        <span className='text-muted'><a href="http://eee.ankara.edu.tr/tr/mainpage/">Electrical & Electronics Engineering</a></span>
 
 
         </footer>

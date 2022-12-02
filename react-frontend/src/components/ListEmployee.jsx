@@ -6,10 +6,11 @@ export default function ListEmployeeComponent() {
 
 
     const [employees, setEmployees] = useState([]);
+
     
 
     useEffect(() => {
-        axios.get('http://localhost:8080/api/employees/getAll')
+        axios.get('http://localhost:8080/api/employees')
         .then(res => {
             console.log(res)
             setEmployees(res.data)
@@ -17,12 +18,16 @@ export default function ListEmployeeComponent() {
         .catch(err => {
             console.log(err)
         })
-    })
+    });
+
 
     return (
     <div>
 
                 <h1 className='text-center'>Employees List</h1>
+
+                
+
                 <div className='row'> 
                 
                 <table className='table table-striped table-bordered table-hover'>
