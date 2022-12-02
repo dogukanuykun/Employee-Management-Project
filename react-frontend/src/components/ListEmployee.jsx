@@ -1,14 +1,15 @@
-import EmployeeService from '../services/EmployeeService';
 import React, { useState, useEffect } from 'react'
 import axios from 'axios';
+
 
 export default function ListEmployeeComponent() {
 
 
     const [employees, setEmployees] = useState([]);
+    
 
     useEffect(() => {
-        axios.get("http://localhost:8080/api/employees/getAll")
+        axios.get('http://localhost:8080/api/employees/getAll')
         .then(res => {
             console.log(res)
             setEmployees(res.data)
