@@ -1,8 +1,13 @@
 package OOP.EmployeeManagementProject.model;
 
+import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -15,11 +20,13 @@ public class Department {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@OneToMany(cascade = CascadeType.ALL)
 	private long id;
 	
 	@Column(name = "department_name")
 	private String departmentName;
+	
+	@OneToMany(mappedBy = "department")
+	private List<Employee> employees;
 	
 	public Department() {}
 	

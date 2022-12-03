@@ -27,8 +27,7 @@ public class Employee {
 	private String email;
 	
 	@ManyToOne
-	@JoinColumn(name = "department_id")
-	private long departmentId;
+	private Department department;
 	
 	@Column(name = "salary")
 	private int salary;
