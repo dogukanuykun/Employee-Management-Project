@@ -25,9 +25,6 @@ public class Department {
 	@Column(name = "department_name")
 	private String departmentName;
 	
-	@OneToMany(mappedBy = "department")
-	private List<Employee> employees;
-	
 	public Department() {}
 	
 	public Department(long id, String departmentName) {

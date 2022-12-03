@@ -51,7 +51,7 @@ export default function ListEmployee() {
                                     <td>{employee.lastName} </td>
                                     <td>{employee.email}</td>
                                     <td>{employee.salary}</td>
-                                    <td>{employee.department}</td>
+                                    <td>{employee.departmentId}</td>
                                 </tr>
                             ))
                         }
