@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios';
 
 
-export default function ListEmployeeComponent() {
+export default function ListEmployee() {
 
 
     const [employees, setEmployees] = useState([]);
@@ -38,6 +38,7 @@ export default function ListEmployeeComponent() {
                             <th>Last Name</th>
                             <th>Email</th>
                             <th>Salary</th>
+                            <th>Department ID</th>
                         </tr>
                     </thead>
 
@@ -50,6 +51,7 @@ export default function ListEmployeeComponent() {
                                     <td>{employee.lastName} </td>
                                     <td>{employee.email}</td>
                                     <td>{employee.salary}</td>
+                                    <td>{employee.department}</td>
                                 </tr>
                             ))
                         }
