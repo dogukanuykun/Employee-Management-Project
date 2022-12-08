@@ -1,16 +1,10 @@
 package OOP.EmployeeManagementProject.entities;
 
-import java.util.List;
-
-import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -19,6 +13,7 @@ public class Employee {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name="id")
 	private long id;
 	
 	@Column(name = "first_name")
@@ -33,22 +28,30 @@ public class Employee {
 	@Column(name = "salary")
 	private int salary;
 	
-	@ManyToOne()
-	@JoinColumn(name = "department_id")
-	private Department departments;
+	@Column(name = "department")
+	private String department;
 	
 	public Employee() {
 		
 	}
 	
-	public Employee(String firstName, String lastName, String email, int salary) {
+	public Employee(String firstName, String lastName, String email, int salary, String department) {
 		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.email = email;
 		this.salary = salary;
+		this.department = department;
 	}
 	
+	public String getDepartment() {
+		return department;
+	}
+
+	public void setDepartment(String department) {
+		this.department = department;
+	}
+
 	public int getSalary() {
 		return salary;
 	}
