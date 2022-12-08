@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import OOP.EmployeeManagementProject.exception.ResourceNotFoundException;
-import OOP.EmployeeManagementProject.model.Employee;
+import OOP.EmployeeManagementProject.entities.Employee;
 import OOP.EmployeeManagementProject.repository.EmployeeRepository;
 
 
