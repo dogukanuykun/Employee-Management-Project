@@ -13,7 +13,8 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import OOP.EmployeeManagementProject.business.EmployeeManager;
+
+import OOP.EmployeeManagementProject.business.BaseEmployeeService;
 import OOP.EmployeeManagementProject.entities.Employee;
 
 
@@ -21,43 +22,48 @@ import OOP.EmployeeManagementProject.entities.Employee;
 @RequestMapping("/api")
 public class EmployeeController {
 
-	private EmployeeManager employeeManager;
+	private BaseEmployeeService employeeService;
 	
 	@Autowired
-	public EmployeeController(EmployeeManager employeeManager) {
+	public EmployeeController(BaseEmployeeService employeeService) {
 		super();
-		this.employeeManager = employeeManager;
+		this.employeeService = employeeService;
 		
 	}
 	
 	//get all employees
 	@GetMapping("/employees")
 	public List<Employee> getAllEmployees(){
-		return employeeManager.getAllEmployees();
+		return employeeService.getAllEmployees();
 	}
 	
 	//create a employee
 	@PostMapping("/employees")
 	public Employee createEmployee(@RequestBody Employee employee) {
-		return employeeManager.createEmployee(employee);
+		return employeeService.createEmployee(employee);
 	}
 	
 	@GetMapping("/employees/{id}")
 	public ResponseEntity<Employee> getEmployeeById(@PathVariable Long id) {
-		return employeeManager.getEmployeeById(id);
+		return employeeService.getEmployeeById(id);
 		
 	}
 	
 	@PutMapping("/employees/{id}")
 	public ResponseEntity<Employee> updateEmployee(@PathVariable Long id, @RequestBody Employee employeeDetails){
-		return employeeManager.updateEmployee(id, employeeDetails);
+		return employeeService.updateEmployee(id, employeeDetails);
 		
 	}
 	
 	@DeleteMapping("/employees/{id}")
 	public ResponseEntity<Map<String, Boolean>> deleteEmployee(@PathVariable Long id){
-		return employeeManager.deleteEmployee(id);
+		return employeeService.deleteEmployee(id);
 		
+	}
+	
+	@PutMapping("/employees/commission/{id}")
+	public ResponseEntity<Employee> giveCommission(@PathVariable Long id){
+		return employeeService.giveCommission(id);
 	}
 	
 }

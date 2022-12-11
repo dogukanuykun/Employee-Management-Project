@@ -26,7 +26,10 @@ public class Employee {
 	private String email;
 	
 	@Column(name = "salary")
-	private int salary;
+	private float salary;
+	
+	@Column(name = "commission_rate")
+	private float commissionRate;
 	
 	@Column(name = "department")
 	private String department;
@@ -35,15 +38,24 @@ public class Employee {
 		
 	}
 	
-	public Employee(String firstName, String lastName, String email, int salary, String department) {
+	public Employee(String firstName, String lastName, String email, float salary, String department, float commissionRate) {
 		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.email = email;
 		this.salary = salary;
 		this.department = department;
+		this.commissionRate = commissionRate;
 	}
 	
+	public float getCommissionRate() {
+		return commissionRate;
+	}
+
+	public void setCommissionRate(float commissionRate) {
+		this.commissionRate = commissionRate;
+	}
+
 	public String getDepartment() {
 		return department;
 	}
@@ -52,10 +64,10 @@ public class Employee {
 		this.department = department;
 	}
 
-	public int getSalary() {
+	public float getSalary() {
 		return salary;
 	}
-	public void setSalary(int salary) {
+	public void setSalary(float salary) {
 		this.salary = salary;
 	}
 	public long getId() {

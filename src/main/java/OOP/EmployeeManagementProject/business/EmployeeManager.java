@@ -69,4 +69,17 @@ public class EmployeeManager implements BaseEmployeeService {
 		return ResponseEntity.ok(response);
 	}
 
+	@Override
+	public ResponseEntity<Employee> giveCommission(Long id) {
+		// TODO Auto-generated method stub
+		Employee employee = employeeRepository.findById(id)
+				.orElseThrow(() -> new ResourceNotFoundException("Employee does not exist with id: " + id));
+		float currentSalary = employee.getSalary();
+		float newSalary = currentSalary + currentSalary * employee.getCommissionRate();
+		employee.setSalary(newSalary);
+		Employee updatedEmployee = employeeRepository.save(employee);
+		
+		return ResponseEntity.ok(updatedEmployee);
+	}
+
 }
